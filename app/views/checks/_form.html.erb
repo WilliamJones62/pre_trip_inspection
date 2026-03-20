@@ -1,0 +1,717 @@
+<%= form_with(model: check) do |form| %>
+  <% if check.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(check.errors.count, "error") %> prohibited this inspection from being saved:</h2>
+
+      <ul>
+        <% check.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Origin</th>
+        <th>Destination</th>
+        <th>Trip Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td> <%= form.text_field :origin %> </td>
+        <td> <%= form.text_field :destionation %> </td>
+        <td> <%= form.date_field :trip_date %></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Truck Tag</th>
+        <th>Trailer Tag</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td> <%= form.text_field :truck_tag %> </td>
+        <td> <%= form.text_field :trailer_tag %> </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3> In Cab 
+    <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#cab" aria-expanded="false" aria-controls="cab">Show/Hide 
+    </button>
+  </h3>
+  <div class="collapse" id="cab">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Chocks</th>
+          <th>Seat Belt</th>
+          <th>ABS Light</th>
+          <th>Air Govenor</th>
+          <th>Leak Test</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td> <%= form.checkbox :chocks %> </td>
+          <td> <%= form.checkbox :seat_belt %> </td>
+          <td> <%= form.checkbox :cab_abs %> </td>
+          <td> <%= form.checkbox :air_govenor %> </td>
+          <td> <%= form.checkbox :leak %> </td>
+        </tr>
+      </tbody>
+    </table>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Low Air</th>
+          <th>Pop Out</th>
+          <th>Trailer Brake</th>
+          <th>Tractor Brake</th>
+          <th>Service Brake</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td> <%= form.checkbox :low_air %> </td>
+          <td> <%= form.checkbox :pop_out %> </td>
+          <td> <%= form.checkbox :trailer_brake %> </td>
+          <td> <%= form.checkbox :tractor_brake %> </td>
+          <td> <%= form.checkbox :service_brake %> </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3> Tractor 
+    <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#tractor" aria-expanded="false" aria-controls="tractor">Show/Hide 
+    </button>
+  </h3>
+  <div class="collapse" id="tractor">
+    <h4 class="ps-3"> Leaks, Leans, Lights 
+      <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#leaks" aria-expanded="false" aria-controls="leaks">Show/Hide 
+      </button>
+    </h4>
+    <div class="collapse" id="leaks">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Truck Clearance Lights</th>
+            <th>Headlights</th>
+            <th>Level</th>
+            <th>Leaks</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td> <%= form.checkbox :truck_clearance_lights %> </td>
+            <td> <%= form.checkbox :headlights %> </td>
+            <td> <%= form.checkbox :level %> </td>
+            <td> <%= form.checkbox :leaks %> </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4 class="ps-3"> Components 
+      <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#componants" aria-expanded="false" aria-controls="componants">Show/Hide 
+      </button>
+    </h4>
+    <div class="collapse" id="componants">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Alternator</th>
+            <th>Alternator Wires</th>
+            <th>Water Pump</th>
+            <th>Hoses</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td> <%= form.checkbox :alternator %> </td>
+            <td> <%= form.checkbox :alternator_wires %> </td>
+            <td> <%= form.checkbox :water_pump %> </td>
+            <td> <%= form.checkbox :wp_hoses %> </td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Belt</th>
+            <th>Air Compressor</th>
+            <th>Hoses</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td> <%= form.checkbox :belt %> </td>
+            <td> <%= form.checkbox :air_compressor %> </td>
+            <td> <%= form.checkbox :ac_hoses %> </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4 class="ps-3"> Fluids 
+      <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#fluids" aria-expanded="false" aria-controls="fluids">Show/Hide 
+      </button>
+    </h4>
+    <div class="collapse" id="fluids">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Coolant Reservoir</th>
+            <th>Hoses</th>
+            <th>Oil Stick</th>
+            <th>Power Steering Reservoir</th>
+            <th>Hoses</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td> <%= form.checkbox :coolant_reservoir %> </td>
+            <td> <%= form.checkbox :cr_hoses %> </td>
+            <td> <%= form.checkbox :oil_stick %> </td>
+            <td> <%= form.checkbox :steering_reservoir %> </td>
+            <td> <%= form.checkbox :sr_hoses %> </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4 class="ps-3"> Steering 
+      <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#steering" aria-expanded="false" aria-controls="steering">Show/Hide 
+      </button>
+    </h4>
+    <div class="collapse" id="steering">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Steering Shaft</th>
+            <th>Universal Joint</th>
+            <th>Steering Gearbox</th>
+            <th>Hoses</th>
+            <th>Pitman Arm, Drag Link, Upper and Lower Control Arms, and Tie Rod</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td> <%= form.checkbox :steering_shaft %> </td>
+            <td> <%= form.checkbox :ss_universal_joint %> </td>
+            <td> <%= form.checkbox :steering_gearbox %> </td>
+            <td> <%= form.checkbox :sg_hoses %> </td>
+            <td> <%= form.checkbox :pitman_arm %> </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4 class="ps-3"> Tractor Front 
+      <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#tractor-front" aria-expanded="false" aria-controls="tractor front">Show/Hide 
+      </button>
+    </h4>
+    <div class="collapse" id="tractor-front">
+      <h5 class="ps-5"> Suspension 
+        <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#tf-suspension" aria-expanded="false" aria-controls="suspension">Show/Hide 
+        </button>
+      </h5>
+      <div class="collapse" id="tf-suspension">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Leaf Spring Mounts</th>
+              <th>Leaf Spring</th>
+              <th>U Bolts</th>
+              <th>Shock Absorber</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td> <%= form.checkbox :tf_leaf_spring_mounts %> </td>
+              <td> <%= form.checkbox :tf_leaf_springs %> </td>
+              <td> <%= form.checkbox :tf_u_bolts %> </td>
+              <td> <%= form.checkbox :tf_shock_absorbers %> </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <h5 class="ps-5"> Brakes 
+        <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#tf-brakes" aria-expanded="false" aria-controls="brakes">Show/Hide 
+        </button>
+      </h5>
+      <div class="collapse" id="tf-brakes">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Hose</th>
+              <th>Chamber</th>
+              <th>Slack Adjuster & Pushrod</th>
+              <th>Shoes</th>
+              <th>Drums</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td> <%= form.checkbox :tf_br_hosess %> </td>
+              <td> <%= form.checkbox :tf_chambers %> </td>
+              <td> <%= form.checkbox :tf_slacks %> </td>
+              <td> <%= form.checkbox :tf_shoes %> </td>
+              <td> <%= form.checkbox :tf_drums %> </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <h5 class="ps-5"> Wheels 
+        <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#tf-wheels" aria-expanded="false" aria-controls="wheels">Show/Hide 
+        </button>
+      </h5>
+      <div class="collapse" id="tf-wheels">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Tires</th>
+              <th>Rims</th>
+              <th>Lug Nuts</th>
+              <th>Hub Seals</th>
+              <th>Stem Valve</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td> <%= form.checkbox :tf_br_tires %> </td>
+              <td> <%= form.checkbox :tf_rims %> </td>
+              <td> <%= form.checkbox :tf_lugs %> </td>
+              <td> <%= form.checkbox :tf_hubs %> </td>
+              <td> <%= form.checkbox :tf_valves %> </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <h4 class="ps-3"> Tractor Side/Rear 
+      <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#tractor-side" aria-expanded="false" aria-controls="tractor side rear">Show/Hide 
+      </button>
+    </h4>
+    <div class="collapse" id="tractor-side">
+      <h5 class="ps-5"> Doors 
+        <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#ts-doors" aria-expanded="false" aria-controls="doors">Show/Hide 
+        </button>
+      </h5>
+      <div class="collapse" id="ts-doors">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Mirror Brackets</th>
+              <th>Handles</th>
+              <th>Doors</th>
+              <th>Rubber Seal</th>
+              <th>Steps</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td> <%= form.checkbox :brackets %> </td>
+              <td> <%= form.checkbox :tractor_handles %> </td>
+              <td> <%= form.checkbox :tractor_doors %> </td>
+              <td> <%= form.checkbox :door_seals %> </td>
+              <td> <%= form.checkbox :door_steps %> </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <h5 class="ps-5"> Tank, Exhaust, Frame, & Shaft
+        <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#tank" aria-expanded="false" aria-controls="fuel tank">Show/Hide 
+        </button>
+      </h5>
+      <div class="collapse" id="tank">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Fuel Tanks</th>
+              <th>Safety Chain</th>
+              <th>Exhaust</th>
+              <th>Frame</th>
+              <th>Driveshaft</th>
+              <th>Universal Joint</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td> <%= form.checkbox :tankss %> </td>
+              <td> <%= form.checkbox :chain %> </td>
+              <td> <%= form.checkbox :exhaust %> </td>
+              <td> <%= form.checkbox :frame %> </td>
+              <td> <%= form.checkbox :driveshaft %> </td>
+              <td> <%= form.checkbox :ds_universal_joint %> </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <h5 class="ps-5"> Brakes 
+        <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#ts-brakes" aria-expanded="false" aria-controls="brakes">Show/Hide 
+        </button>
+      </h5>
+      <div class="collapse" id="ts-brakes">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Hose</th>
+              <th>Chamber</th>
+              <th>Slack Adjuster & Pushrod</th>
+              <th>Shoes</th>
+              <th>Drums</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td> <%= form.checkbox :tr_br_hosess %> </td>
+              <td> <%= form.checkbox :tr_chambers %> </td>
+              <td> <%= form.checkbox :tr_slacks %> </td>
+              <td> <%= form.checkbox :tr_shoes %> </td>
+              <td> <%= form.checkbox :tr_drums %> </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <h5 class="ps-5"> Suspension 
+        <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#ts-suspension" aria-expanded="false" aria-controls="suspension">Show/Hide 
+        </button>
+      </h5>
+      <div class="collapse" id="ts-suspension">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Leaf Spring Mounts</th>
+              <th>Leaf Spring</th>
+              <th>U Bolts</th>
+              <th>Shock Absorber</th>
+              <th>Airbags</th>
+          </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td> <%= form.checkbox :tr_leaf_spring_mounts %> </td>
+              <td> <%= form.checkbox :tr_leaf_springs %> </td>
+              <td> <%= form.checkbox :tr_u_bolts %> </td>
+              <td> <%= form.checkbox :tr_shock_absorbers %> </td>
+              <td> <%= form.checkbox :tractor_airbags %> </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <h5 class="ps-5"> Wheels 
+        <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#ts-wheels" aria-expanded="false" aria-controls="wheels">Show/Hide 
+        </button>
+      </h5>
+      <div class="collapse" id="ts-wheels">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Tires</th>
+              <th>Rims</th>
+              <th>Lug Nuts</th>
+              <th>Hub Seals</th>
+              <th>Stem Valve</th>
+              <th>Mud Flaps</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td> <%= form.checkbox :tr_tires %> </td>
+              <td> <%= form.checkbox :tr_rims %> </td>
+              <td> <%= form.checkbox :tr_lugs %> </td>
+              <td> <%= form.checkbox :tr_hubs %> </td>
+              <td> <%= form.checkbox :tr_valves %> </td>
+              <td> <%= form.checkbox :tr_muds %> </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <h5 class="ps-5"> Rear Lights & Space 
+        <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#ts-lights" aria-expanded="false" aria-controls="lights">Show/Hide 
+        </button>
+      </h5>
+      <div class="collapse" id="ts-lights">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Lights</th>
+              <th>Space</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td> <%= form.checkbox :tr_lights%> </td>
+              <td> <%= form.checkbox :space %> </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <h3> Trailer 
+    <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#trailer" aria-expanded="false" aria-controls="trailer">Show/Hide 
+    </button>
+  </h3>
+  <div class="collapse" id="trailer">
+    <h4 class="ps-3"> Front & Sides 
+      <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#trailer-side" aria-expanded="false" aria-controls="trailer front side">Show/Hide 
+      </button>
+    </h4>
+    <div class="collapse" id="trailer-side">
+      <h5 class="ps-5"> Panels, Frame, & DOT Tape 
+        <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#trs-panels" aria-expanded="false" aria-controls="panels">Show/Hide 
+        </button>
+      </h5>
+      <div class="collapse" id="trs-panels">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Clearance Lights</th>
+              <th>Front Panels</th>
+              <th>Side Panels</th>
+              <th>DOT Tape</th>
+              <th>Frame</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td> <%= form.checkbox :front_clearance %> </td>
+              <td> <%= form.checkbox :front_panels %> </td>
+              <td> <%= form.checkbox :side_panels %> </td>
+              <td> <%= form.checkbox :side_dot %> </td>
+              <td> <%= form.checkbox :trailer_frame %> </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <h5 class="ps-5"> Landing Gear, Floor, Air Lines, & ABS Light 
+        <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#trs-gear" aria-expanded="false" aria-controls="landing gear">Show/Hide 
+        </button>
+      </h5>
+      <div class="collapse" id="trs-gear">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Landing Gear</th>
+              <th>Floor</th>
+              <th>Cross Members</th>
+              <th>Service & Emergency Air Lines</th>
+              <th>ABS Light</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td> <%= form.checkbox :gear %> </td>
+              <td> <%= form.checkbox :floor %> </td>
+              <td> <%= form.checkbox :cross %> </td>
+              <td> <%= form.checkbox :trailer_air_lines %> </td>
+              <td> <%= form.checkbox :abs_light %> </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <h5 class="ps-5"> Brakes 
+        <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#trs-brakes" aria-expanded="false" aria-controls="brakes">Show/Hide 
+        </button>
+      </h5>
+      <div class="collapse" id="trs-brakes">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Hose</th>
+              <th>Chamber</th>
+              <th>Slack Adjuster & Pushrod</th>
+              <th>Shoes</th>
+              <th>Drums</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td> <%= form.checkbox :trailer_br_hoses %> </td>
+              <td> <%= form.checkbox :trailer_chambers %> </td>
+              <td> <%= form.checkbox :trailer_slacks %> </td>
+              <td> <%= form.checkbox :trailer_shoes %> </td>
+              <td> <%= form.checkbox :trailer_drums %> </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <h5 class="ps-5"> Suspension 
+        <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#trs-suspension" aria-expanded="false" aria-controls="suspension">Show/Hide 
+        </button>
+      </h5>
+      <div class="collapse" id="trs-suspension">
+        <table class="table">
+            <thead>
+              <tr>
+                <th>Leaf Spring Mounts</th>
+                <th>Leaf Spring</th>
+                <th>U Bolts</th>
+                <th>Shock Absorber</th>
+                <th>Airbags</th>
+            </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td> <%= form.checkbox :trailer_leaf_spring_mounts %> </td>
+                <td> <%= form.checkbox :trailer_leaf_springs %> </td>
+                <td> <%= form.checkbox :trailer_u_bolts %> </td>
+                <td> <%= form.checkbox :trailer_shock_absorbers %> </td>
+                <td> <%= form.checkbox :trailer_airbags %> </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      <h5 class="ps-5"> Wheels 
+        <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#trs-wheels" aria-expanded="false" aria-controls="wheels">Show/Hide 
+        </button>
+      </h5>
+      <div class="collapse" id="trs-wheels">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Tires</th>
+              <th>Rims</th>
+              <th>Lug Nuts</th>
+              <th>Hub Seals</th>
+              <th>Stem Valve</th>
+              <th>Mud Flaps</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td> <%= form.checkbox :trailer_tires %> </td>
+              <td> <%= form.checkbox :trailer_rims %> </td>
+              <td> <%= form.checkbox :trailer_lugs %> </td>
+              <td> <%= form.checkbox :trailer_hubs %> </td>
+              <td> <%= form.checkbox :trailer_valves %> </td>
+              <td> <%= form.checkbox :trailer_muds %> </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <h4 class="ps-3"> Rear 
+      <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#trailer-rear" aria-expanded="false" aria-controls="trailer rear">Show/Hide 
+      </button>
+    </h4>
+    <div class="collapse" id="trailer-rear">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Clearance Lights</th>
+            <th>Doors</th>
+            <th>Handles</th>
+            <th>DOT Tape</th>
+            <th>Brake, Turn, & Tail Lights</th>
+            <th>Bumper</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td> <%= form.checkbox :rear_clearance %> </td>
+            <td> <%= form.checkbox :trailer_doors %> </td>
+            <td> <%= form.checkbox :trailer_handles %> </td>
+            <td> <%= form.checkbox :rear_dot %> </td>
+            <td> <%= form.checkbox :trailer_lights %> </td>
+            <td> <%= form.checkbox :bumper %> </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <h3> Coupling 
+    <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#coupling" aria-expanded="false" aria-controls="coupling">Show/Hide 
+    </button>
+  </h3>
+  <div class="collapse" id="coupling">
+    <h4 class="ps-3"> Air & Electricity 
+      <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#lines" aria-expanded="false" aria-controls="lines">Show/Hide 
+      </button>
+    </h4>
+    <div class="collapse" id="lines">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Service & Emergency Air Lines</th>
+            <th>Gladhands</th>
+            <th>Electric Lines</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td> <%= form.checkbox :coupling_air_lines %> </td>
+            <td> <%= form.checkbox :gladhands %> </td>
+            <td> <%= form.checkbox :coupling_electric_lines %> </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <h4 class="ps-3"> Fifth Wheel 
+      <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#fifth" aria-expanded="false" aria-controls="fifth wheel">Show/Hide 
+      </button>
+    </h4>
+    <div class="collapse" id="fifth">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Apron</th>
+            <th>Skid Plate</th>
+            <th>Pivot Pin</th>
+            <th>Lock & Release Handle</th>
+            <th>Platform</th>
+            <th>Kingpin & Locking Jaw</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td> <%= form.checkbox :apron %> </td>
+            <td> <%= form.checkbox :skid_plate %> </td>
+            <td> <%= form.checkbox :pivot_pin %> </td>
+            <td> <%= form.checkbox :lock_release %> </td>
+            <td> <%= form.checkbox :platform %> </td>
+            <td> <%= form.checkbox :kingpin %> </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <h3> Faults 
+    <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#faults" aria-expanded="false" aria-controls="faults">Show/Hide 
+    </button>
+  </h3>
+  <div class="collapse" id="faults">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Images</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td> <%= form.file_field :images, multiple: true %> </td>
+          <td> <%= form.text_area :notes %> </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div>
+    <%= form.submit "Submit inspection", class: "btn btn-primary" %>
+  </div>
+<% end %>

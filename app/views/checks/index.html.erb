@@ -1,0 +1,34 @@
+
+<% content_for :title, "Checks" %>
+
+<h1>Inspections</h1>
+
+<table class="table table-striped" >
+  <thead>
+    <tr>
+      <th>Origin</th>
+      <th>Destination</th>
+      <th>Trip Date</th>
+      <% if Current.user.admin %>
+      <th>Driver</th>
+      <% end %>
+      <th>Edit</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @checks.each do |check| %>
+      <tr>
+        <td><%= check.origin %></td>
+        <td><%= check.destionation %></td>
+        <td><%= check.trip_date %></td>
+        <% if Current.user.admin %>
+        <td><%= check.user.email_address %></td>
+        <% end %>
+        <td><%= link_to 'Edit', edit_check_path(check), class: "btn btn-primary" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to "New inspection", new_check_path, class: "btn btn-secondary" %>

@@ -1,0 +1,11 @@
+<% content_for :title, "New inspection" %>
+
+<h1>New inspection</h1>
+
+<%= render "form", check: @check %>
+
+<br>
+
+<div>
+  <%= link_to "Back to inspections", checks_path, class: "btn btn-secondary" %>
+</div>

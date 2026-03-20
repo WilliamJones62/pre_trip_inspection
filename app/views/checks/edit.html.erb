@@ -1,0 +1,14 @@
+<% content_for :title, "Editing inspection" %>
+
+<h1>Editing inspection</h1>
+
+<%= render "form", check: @check %>
+<% if @check.images.length > 0 %>
+  <%= render "delete_image_form", check: @check %>
+<% end %>
+
+<br>
+
+<div>
+  <%= link_to "Back to inspections", checks_path, class: "btn btn-secondary" %>
+</div>
