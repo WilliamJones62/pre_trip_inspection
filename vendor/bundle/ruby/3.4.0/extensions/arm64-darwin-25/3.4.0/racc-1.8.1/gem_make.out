@@ -1,0 +1,18 @@
+current directory: /Users/williamjones/sites/pre_trip_inspection/vendor/bundle/ruby/3.4.0/gems/racc-1.8.1/ext/racc/cparse
+/Users/williamjones/.rbenv/versions/3.4.7/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /Users/williamjones/sites/pre_trip_inspection/vendor/bundle/ruby/3.4.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20260323-2334-9bdh3w sitelibdir\=./.gem.20260323-2334-9bdh3w clean
+
+current directory: /Users/williamjones/sites/pre_trip_inspection/vendor/bundle/ruby/3.4.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20260323-2334-9bdh3w sitelibdir\=./.gem.20260323-2334-9bdh3w
+compiling cparse.c
+linking shared-object racc/cparse.bundle
+
+current directory: /Users/williamjones/sites/pre_trip_inspection/vendor/bundle/ruby/3.4.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20260323-2334-9bdh3w sitelibdir\=./.gem.20260323-2334-9bdh3w install
+/usr/bin/install -c -m 0755 cparse.bundle ./.gem.20260323-2334-9bdh3w/racc
+
+current directory: /Users/williamjones/sites/pre_trip_inspection/vendor/bundle/ruby/3.4.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20260323-2334-9bdh3w sitelibdir\=./.gem.20260323-2334-9bdh3w clean

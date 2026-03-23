@@ -1,0 +1,18 @@
+current directory: /Users/williamjones/sites/pre_trip_inspection/vendor/bundle/ruby/3.4.0/gems/websocket-driver-0.8.0/ext/websocket-driver
+/Users/williamjones/.rbenv/versions/3.4.7/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /Users/williamjones/sites/pre_trip_inspection/vendor/bundle/ruby/3.4.0/gems/websocket-driver-0.8.0/ext/websocket-driver
+make DESTDIR\= sitearchdir\=./.gem.20260323-2334-hq87c6 sitelibdir\=./.gem.20260323-2334-hq87c6 clean
+
+current directory: /Users/williamjones/sites/pre_trip_inspection/vendor/bundle/ruby/3.4.0/gems/websocket-driver-0.8.0/ext/websocket-driver
+make DESTDIR\= sitearchdir\=./.gem.20260323-2334-hq87c6 sitelibdir\=./.gem.20260323-2334-hq87c6
+compiling websocket_mask.c
+linking shared-object websocket_mask.bundle
+
+current directory: /Users/williamjones/sites/pre_trip_inspection/vendor/bundle/ruby/3.4.0/gems/websocket-driver-0.8.0/ext/websocket-driver
+make DESTDIR\= sitearchdir\=./.gem.20260323-2334-hq87c6 sitelibdir\=./.gem.20260323-2334-hq87c6 install
+/usr/bin/install -c -m 0755 websocket_mask.bundle ./.gem.20260323-2334-hq87c6
+
+current directory: /Users/williamjones/sites/pre_trip_inspection/vendor/bundle/ruby/3.4.0/gems/websocket-driver-0.8.0/ext/websocket-driver
+make DESTDIR\= sitearchdir\=./.gem.20260323-2334-hq87c6 sitelibdir\=./.gem.20260323-2334-hq87c6 clean

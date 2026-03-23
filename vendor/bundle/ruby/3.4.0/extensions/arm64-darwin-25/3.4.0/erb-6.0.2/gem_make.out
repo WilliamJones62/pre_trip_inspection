@@ -1,0 +1,19 @@
+current directory: /Users/williamjones/sites/pre_trip_inspection/vendor/bundle/ruby/3.4.0/gems/erb-6.0.2/ext/erb/escape
+/Users/williamjones/.rbenv/versions/3.4.7/bin/ruby extconf.rb
+checking for rb_ext_ractor_safe() in ruby.h... yes
+creating Makefile
+
+current directory: /Users/williamjones/sites/pre_trip_inspection/vendor/bundle/ruby/3.4.0/gems/erb-6.0.2/ext/erb/escape
+make DESTDIR\= sitearchdir\=./.gem.20260323-2334-jqksx5 sitelibdir\=./.gem.20260323-2334-jqksx5 clean
+
+current directory: /Users/williamjones/sites/pre_trip_inspection/vendor/bundle/ruby/3.4.0/gems/erb-6.0.2/ext/erb/escape
+make DESTDIR\= sitearchdir\=./.gem.20260323-2334-jqksx5 sitelibdir\=./.gem.20260323-2334-jqksx5
+compiling escape.c
+linking shared-object erb/escape.bundle
+
+current directory: /Users/williamjones/sites/pre_trip_inspection/vendor/bundle/ruby/3.4.0/gems/erb-6.0.2/ext/erb/escape
+make DESTDIR\= sitearchdir\=./.gem.20260323-2334-jqksx5 sitelibdir\=./.gem.20260323-2334-jqksx5 install
+/usr/bin/install -c -m 0755 escape.bundle ./.gem.20260323-2334-jqksx5/erb
+
+current directory: /Users/williamjones/sites/pre_trip_inspection/vendor/bundle/ruby/3.4.0/gems/erb-6.0.2/ext/erb/escape
+make DESTDIR\= sitearchdir\=./.gem.20260323-2334-jqksx5 sitelibdir\=./.gem.20260323-2334-jqksx5 clean
