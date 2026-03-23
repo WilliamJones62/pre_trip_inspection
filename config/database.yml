@@ -85,20 +85,5 @@ test:
 # for a full overview on how database connection configuration can be specified.
 #
 production:
-  primary: &primary_production
-    <<: *default
-    database: pre_trip_inspection_production
-    username: pre_trip_inspection
-    password: <%= ENV["PRE_TRIP_INSPECTION_DATABASE_PASSWORD"] %>
-  cache:
-    <<: *primary_production
-    database: pre_trip_inspection_production_cache
-    migrations_paths: db/cache_migrate
-  queue:
-    <<: *primary_production
-    database: pre_trip_inspection_production_queue
-    migrations_paths: db/queue_migrate
-  cable:
-    <<: *primary_production
-    database: pre_trip_inspection_production_cable
-    migrations_paths: db/cable_migrate
+  <<: *default
+  url: <%= Rails.application.credentials.dig(:render, :db_internal) %>
