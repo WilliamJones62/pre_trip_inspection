@@ -1,4 +1,3 @@
-# require "test_helper"
 
 # class SessionsControllerTest < ActionDispatch::IntegrationTest
 #   setup { @user = User.take }

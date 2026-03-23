@@ -1,4 +1,3 @@
-# require "test_helper"
 
 # class UserTest < ActiveSupport::TestCase
 #   # test "downcases and strips email_address" do
