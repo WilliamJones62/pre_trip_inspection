@@ -397,6 +397,8 @@ GEM
     thruster (0.1.19-arm64-darwin)
     thruster (0.1.19-x86_64-linux)
     timeout (0.6.0)
+    trix (0.10.1)
+      rails
     tsort (0.2.0)
     turbo-rails (2.0.23)
       actionpack (>= 7.1.0)
@@ -433,7 +435,6 @@ PLATFORMS
   x86_64-linux-musl
 
 DEPENDENCIES
-  action_text-trix
   bcrypt (~> 3.1.7)
   bootsnap
   bootstrap (~> 5.3.3)
@@ -457,6 +458,7 @@ DEPENDENCIES
   solid_queue
   stimulus-rails
   thruster
+  trix
   turbo-rails
   tzinfo-data
   web-console
