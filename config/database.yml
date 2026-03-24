@@ -86,4 +86,5 @@ test:
 #
 production:
   <<: *default
+  database: pre_trip_inspection_production
   url: <%= Rails.application.credentials.dig(:render, :db_internal) %>
