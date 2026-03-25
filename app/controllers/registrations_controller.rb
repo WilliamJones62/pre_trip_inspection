@@ -2,7 +2,9 @@ class RegistrationsController < ApplicationController
   allow_unauthenticated_access
 
   def new
+    puts "**** registrations controller new action"
     @user = User.new
+    puts "**** registrations controller new user"
   end
 
   def create
