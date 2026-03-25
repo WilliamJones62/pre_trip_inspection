@@ -85,5 +85,21 @@ test:
 # for a full overview on how database connection configuration can be specified.
 #
 production:
-  <<: *default
-  url: <%= Rails.application.credentials.dig(:render, :db_internal) %>
+  # <<: *default
+  # database: pre_trip_inspection_production
+  # url: <%= Rails.application.credentials.dig(:render, :db_internal) %>
+  primary:
+    # Your existing primary production database configuration
+    adapter: postgresql
+    encoding: unicode
+    database: pre_trip_inspection_production
+    pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+    # ... other configurations ...
+
+  queue:
+    # Configuration for the queue database, pointing to the same DB
+    adapter: postgresql
+    encoding: unicode
+    database: pre_trip_inspection_production
+    pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+    # Ensure this matches your primary configuration
