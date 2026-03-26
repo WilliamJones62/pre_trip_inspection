@@ -105,3 +105,12 @@ production:
     # database: pre_trip_inspection_production
     pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
     # Ensure this matches your primary configuration
+
+  cache:
+    # Configuration for the queue database, pointing to the same DB
+    adapter: postgresql
+    encoding: unicode
+    url: <%= Rails.application.credentials.dig(:render, :db_internal) %>
+    # database: pre_trip_inspection_production
+    pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+    # Ensure this matches your primary configuration
