@@ -92,7 +92,8 @@ production:
     # Your existing primary production database configuration
     adapter: postgresql
     encoding: unicode
-    database: pre_trip_inspection_production
+    url: <%= Rails.application.credentials.dig(:render, :db_internal) %>
+    # database: pre_trip_inspection_production
     pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
     # ... other configurations ...
 
@@ -100,6 +101,7 @@ production:
     # Configuration for the queue database, pointing to the same DB
     adapter: postgresql
     encoding: unicode
-    database: pre_trip_inspection_production
+    url: <%= Rails.application.credentials.dig(:render, :db_internal) %>
+    # database: pre_trip_inspection_production
     pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
     # Ensure this matches your primary configuration
