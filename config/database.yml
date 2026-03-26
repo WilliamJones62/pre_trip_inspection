@@ -90,6 +90,7 @@ production:
   # url: <%= Rails.application.credentials.dig(:render, :db_internal) %>
   primary:
     # Your existing primary production database configuration
+    <<: *default
     adapter: postgresql
     encoding: unicode
     url: <%= Rails.application.credentials.dig(:render, :db_internal) %>
@@ -97,20 +98,20 @@ production:
     pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
     # ... other configurations ...
 
-  queue:
-    # Configuration for the queue database, pointing to the same DB
-    adapter: postgresql
-    encoding: unicode
-    url: <%= Rails.application.credentials.dig(:render, :db_internal) %>
-    # database: pre_trip_inspection_production
-    pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-    # Ensure this matches your primary configuration
+  # queue:
+  #   # Configuration for the queue database, pointing to the same DB
+  #   adapter: postgresql
+  #   encoding: unicode
+  #   url: <%= Rails.application.credentials.dig(:render, :db_internal) %>
+  #   # database: pre_trip_inspection_production
+  #   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  #   # Ensure this matches your primary configuration
 
-  cache:
-    # Configuration for the queue database, pointing to the same DB
-    adapter: postgresql
-    encoding: unicode
-    url: <%= Rails.application.credentials.dig(:render, :db_internal) %>
-    # database: pre_trip_inspection_production
-    pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-    # Ensure this matches your primary configuration
+  # cache:
+  #   # Configuration for the queue database, pointing to the same DB
+  #   adapter: postgresql
+  #   encoding: unicode
+  #   url: <%= Rails.application.credentials.dig(:render, :db_internal) %>
+  #   # database: pre_trip_inspection_production
+  #   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  #   # Ensure this matches your primary configuration
