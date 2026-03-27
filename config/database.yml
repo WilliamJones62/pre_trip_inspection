@@ -88,14 +88,14 @@ production:
   # <<: *default
   # database: pre_trip_inspection_production
   # url: <%= Rails.application.credentials.dig(:render, :db_internal) %>
-  primary:
+  # primary:
     # Your existing primary production database configuration
     <<: *default
     adapter: postgresql
     encoding: unicode
     url: <%= Rails.application.credentials.dig(:render, :db_internal) %>
     # database: pre_trip_inspection_production
-    pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+    # pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
     # ... other configurations ...
 
   # queue:
